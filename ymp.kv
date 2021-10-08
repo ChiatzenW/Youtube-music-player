@@ -1,19 +1,50 @@
 #:kivy 1.0.9
 
-<YmpMenu>:    
-    canvas:
+#Colours:
+#:set dark (40/255,44/255,52/255,1)
+#:set light (171/255,178/255,191/255,1)
+#:set green (152/255,195/255,121/255,1)
+<Widget>:
+    font_size: dp(15)
+    font_name: "Hack Regular Nerd Font Complete.ttf"
+    color:green
+    
+    canvas.before:
+        Color:
+            rgba: light
+        Line: 
+            width: 2
+            rectangle: self.x, self.y, self.width, self.height
+<Button>:
+    background_normal: ''
+    background_color: dark
+    
+    
+<YmpBar>:
+    canvas.before:
+        Color: 
+            rgb:dark
         Rectangle:
-            pos: self.center_x - 5, 0
-            size: 10, self.height
-            
+            size: self.size
+            pos: self.pos
     Label:
-        font_size: 70  
-        center_x: root.width / 4
-        top: root.top - 50
-        text: "0"
-        
-    Label:
-        font_size: 70  
-        center_x: root.width * 3 / 4
-        top: root.top - 50
-        text: "0"
+        text: "\u2315"
+        size_hint: .1,1
+        font_size: dp(30)
+        font_name: "DejaVuSansMono.ttf"
+
+    TextInput:
+        focus: True
+        font_size: dp(16)
+        background_color:dark
+        foreground_color:light
+        multiline:False
+        cursor_blink:True
+        cursor_color:light
+        cursor_width: '5sp'
+    Button:
+        text:"|>"
+        size_hint:.1,1
+    Button:
+        text:"||"
+        size_hint:.1,1
