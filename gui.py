@@ -5,7 +5,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
-from kivy.graphics.svg import Svg
 from kivy.core.window import Window
 Window.size = (800, 30)
 
@@ -13,6 +12,8 @@ Window.size = (800, 30)
 
 
 class YmpBar(BoxLayout):
+    def download_mp3(value):
+        downloadMp3.main(value.ids.name.text) 
     pass
 
 class YmpMenu(Widget):

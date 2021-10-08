@@ -1,12 +1,12 @@
 import pytube, os
 from moviepy.audio.io.AudioFileClip import AudioFileClip
 
-def main():
+def main(name):
     if not os.path.exists('tmp'):
                 os.mkdir('tmp')
 
     #search for a video
-    srch = 'pmaru'
+    srch = name
     s = pytube.Search(srch)
     yt=s.results[0]
 

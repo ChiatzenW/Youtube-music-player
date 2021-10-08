@@ -6,7 +6,8 @@
 #:set green (152/255,195/255,121/255,1)
 <Widget>:
     font_size: dp(15)
-    font_name: "fonts/Hack Regular Nerd Font Complete.ttf"
+    
+    font_name: "fonts/FiraCode-Bold.ttf"
     color:green
     
     canvas.before:
@@ -34,6 +35,7 @@
         font_name: "fonts/DejaVuSansMono.ttf"
 
     TextInput:
+        id:name
         focus: True
         font_size: dp(16)
         background_color:dark
@@ -42,9 +44,13 @@
         cursor_blink:True
         cursor_color:light
         cursor_width: '5sp'
+        on_text_validate: root.download_mp3() 
     Button:
         text:"|>"
         size_hint:.1,1
+        
+        bold:True
     Button:
         text:"||"
         size_hint:.1,1
+        bold:True
